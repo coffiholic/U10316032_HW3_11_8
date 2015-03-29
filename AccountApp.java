@@ -1,6 +1,7 @@
+
 public class AccountApp {
   public static void main (String[] args) {
-    Account1.setAnnualInterestRate(5.5);
+    Account.setAnnualInterestRate(5.5);
 
     Account account = new Account("George", 1122, 1000);
     account.deposit(30);
@@ -12,7 +13,7 @@ public class AccountApp {
     account.withdraw(2);
     
     System.out.println("Name: " + account.getName());
-    System.out.println("Annual interest rate: " + Account1.getAnnualInterestRate());
+    System.out.println("Annual interest rate: " + Account.getAnnualInterestRate());
     System.out.println("Balance: " + account.getBalance());
     
     java.util.ArrayList list = account.getTransactions();
@@ -75,7 +76,7 @@ class Account {
   }
 
   public static void setAnnualInterestRate(double annualInterestRate) {
-    Account1.annualInterestRate = annualInterestRate;
+    Account.annualInterestRate = annualInterestRate;
   }
 
   public double getMonthlyInterest() {
