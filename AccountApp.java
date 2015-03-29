@@ -2,7 +2,7 @@ public class AccountApp {
   public static void main (String[] args) {
     Account1.setAnnualInterestRate(5.5);
 
-    Account1 account = new Account1("George", 1122, 1000);
+    Account account = new Account("George", 1122, 1000);
     account.deposit(30);
     account.deposit(40);
     account.deposit(50);
@@ -27,7 +27,7 @@ public class AccountApp {
   }
 }
 
-class Account1 {
+class Account {
   private int id;
   private String name;
   private double balance;
@@ -35,11 +35,11 @@ class Account1 {
   private java.util.Date dateCreated;
   private java.util.ArrayList transactions = new java.util.ArrayList();
 
-  public Account1() {
+  public Account() {
     dateCreated = new java.util.Date();
   }
 
-  public Account1(String name, int id, double balance) {
+  public Account(String name, int id, double balance) {
     this.id = id;
     this.name = name;
     this.balance = balance;
