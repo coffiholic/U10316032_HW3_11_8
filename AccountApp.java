@@ -3,7 +3,10 @@ public class AccountApp {
   public static void main (String[] args) {
     Account.setAnnualInterestRate(5.5);
 
+    //Write a test program that creates an Account with annual interest rate 1.5%, balance 1000, id 1122, and name George
     Account account = new Account("George", 1122, 1000);
+    
+    //Deposit $30, $40, and $50 to the account and withdraw $5, $4, and $2 from the account.
     account.deposit(30);
     account.deposit(40);
     account.deposit(50);
@@ -12,6 +15,7 @@ public class AccountApp {
     account.withdraw(4);
     account.withdraw(2);
     
+    //Print an account summary that shows account holder name, interest rate, balance, and all transactions.
     System.out.println("Name: " + account.getName());
     System.out.println("Annual interest rate: " + Account.getAnnualInterestRate());
     System.out.println("Balance: " + account.getBalance());
@@ -28,12 +32,17 @@ public class AccountApp {
   }
 }
 
+
 class Account {
   private int id;
+
+  //Add a new data field name of the String type to store the name of the customer.
   private String name;
   private double balance;
   private static double annualInterestRate;
   private java.util.Date dateCreated;
+  
+  //Add a new data field named transactions whose type is ArrayList that stores the transaction for the accounts. Each transaction is an instance of the Transaction class. 
   private java.util.ArrayList transactions = new java.util.ArrayList();
 
   public Account() {
@@ -87,6 +96,7 @@ class Account {
     return dateCreated;
   }
 
+  //Modify the withdraw and deposit methods to add a transaction to the transactions array list.
   public void withdraw(double amount) {
     balance -= amount;
     transactions.add(new Transaction('W', amount, balance, ""));
